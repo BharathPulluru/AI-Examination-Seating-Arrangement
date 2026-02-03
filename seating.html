@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Seating Blueprint</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>📐 Seating Blueprint</h1>
+  <div id="output"></div>
+  <button onclick="goBack()">⬅ Back</button>
+</div>
+
+<script>
+const data = JSON.parse(localStorage.getItem("seatingData"));
+const output = document.getElementById("output");
+
+if (!data) {
+  output.innerHTML = "<p>No seating data found.</p>";
+}
+
+for (const room in data) {
+  const roomDiv = document.createElement("div");
+  roomDiv.className = "room";
+  roomDiv.innerHTML = `<h2>${room}</h2>`;
+
+  const grid = document.createElement("div");
+  grid.className = "grid";
+
+  data[room].forEach(column => {
+    const colDiv = document.createElement("div");
+    colDiv.className = "column";
+
+    column.forEach(bench => {
+      const benchDiv = document.createElement("div");
+      benchDiv.className = "bench";
+      benchDiv.innerHTML =
+        `<strong>${bench.label}</strong><br>` +
+        bench.students.join("<br>");
+      colDiv.appendChild(benchDiv);
+    });
+
+    grid.appendChild(colDiv);
+  });
+
+  roomDiv.appendChild(grid);
+  output.appendChild(roomDiv);
+}
+
+function goBack() {
+  window.location.href = "index.html";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.card, .room {
+  background: #ffffff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+input {
+  padding: 8px;
+  margin: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+.generate {
+  width: 100%;
+  font-size: 20px;
+  margin-top: 25px;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  box-shadow: 0 0 15px rgba(34,197,94,0.8);
+}
+
+.generate:hover {
+  background: linear-gradient(90deg, #15803d, #16a34a);
+}
+
+.grid {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-top: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bench {
+  background: #e0f2fe;
+  padding: 10px;
+  border-radius: 8px;
+  min-width: 130px;
+  text-align: center;
+  border: 2px solid #0284c7;
+}
+
+.delete {
+  background: #dc2626;
+  margin-left: 5px;
+}
